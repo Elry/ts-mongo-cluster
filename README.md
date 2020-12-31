@@ -67,3 +67,15 @@ You do not need to modify your functions from Part 2 to use this new schema. You
 	},
 ...
 ```
+
+
+https://www.mongodb.com/blog/post/6-rules-of-thumb-for-mongodb-schema-design-part-2
+https://www.mongodb.com/blog/post/6-rules-of-thumb-for-mongodb-schema-design-part-3
+https://www.mongodb.com/basics/create-database
+https://www.mongodb.com/security-best-practices
+https://www.tutorialspoint.com/mongodb/mongodb_delete_document.htm
+https://medium.com/tech-tajawal/nosql-modeling-database-structuring-part-ii-4c364c4bc17a
+https://docs.mongodb.com/v3.2/core/data-modeling-introduction/
+https://docs.mongodb.com/v3.2/core/data-model-design/#data-modeling-referencing
+https://docs.mongodb.com/v3.2/core/data-model-operations/#data-model-atomicity
+https://docs.mongodb.com/v3.2/tutorial/model-referenced-one-to-many-relationships-between-documents/
