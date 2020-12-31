@@ -1,10 +1,9 @@
 const express = require("express");
 const app = express();
 const PORT = 8000;
-let mongoose;
 
 try{
-  mongoose = require("mongoose");
+  let mongoose = require("mongoose");
 }catch(e){
   console.log(e);
 }
