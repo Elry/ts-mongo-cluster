@@ -1,0 +1,81 @@
+{
+  "field-availability": {
+    "availability-id-1": {
+      "time": "12-13",
+      "field-id": "field-id-1"
+    },
+    "availability-id-2": {
+      "time": "13-14",
+      "field-id": "field-id-2"
+    }
+  },
+
+  "field": {
+    "field-id-1": {
+      "name": "BarcelonaFieldA",
+      "description": "Barcelona main field",
+      "type": "grass",
+      "directions": {
+        "number": 12,
+        "street": "street 1",
+        "district": "Downtown",
+        "coordinates": {
+          "lat": -73.856077,
+          "long": 40.848447
+        }
+      },
+      "photos-url": {
+        "url-1": "https://www.google.com",
+        "url-2": "https://www.google.com"
+      },
+      "field-availabilities": {
+        "availability-1": "availability-id-1",
+        "availability-2": "availability-id-2"
+      }
+    }
+  },
+
+  "game": {
+    "game-id-1": {
+      "field-id": "field-id-1",
+      "start-time": 1601010101,
+      "availability-id": "availability-id-1",
+      "users": {
+        "user-1": "user-id-1",
+        "user-2": "user-id-2"
+      }
+    }
+  },
+
+  "user":{
+    "user-id-1":{
+      "name": "A",
+      "email": [
+        {
+          "email-0": "a@gmail.com",
+          "email-1": "a1@gmail.com",
+        }
+      ],
+      "games": {
+        "game-1": "game-id-1"
+      },
+      "fields":{
+        "field-1": "field-id-1"
+      }
+    },
+    "user-id-2":{
+      "name": "b",
+      "email": "b@bmail.com",
+      "games": {
+        "game-1": "game-id-1"
+      },
+      "fields":{
+        "field-1": "field-id-1"
+      }
+    }
+  },
+
+  "game-signup":{
+   
+  }  
+}
