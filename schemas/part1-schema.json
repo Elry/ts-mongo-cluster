@@ -60,9 +60,9 @@
       "team-size": "11",
       "field-id": "field-id-1",
       "start-time": 1601010101,
-      "users": [
-        "user-id-1",
-        "user-id-2"
+      "players": [
+        "player-id-1",
+        "player-id-2"
       ],
       "availability-id": "availability-id-1"
     },
@@ -70,16 +70,16 @@
       "team-size": "11",
       "field-id": "field-id-2",
       "start-time": 1601010101,
-      "users": [
-        "user-id-1",
-        "user-id-2"
+      "players": [
+        "player-id-1",
+        "player-id-2"
       ],
       "availability-id": "availability-id-3"
     }
   },
 
-  "user":{
-    "user-id-1":{
+  "player":{
+    "player-id-1":{
       "name": "A",
       "email": [
         "a@gmail.com",
@@ -87,7 +87,7 @@
       ],
       "fields": ["field-id-1"]
     },
-    "user-id-2":{
+    "player-id-2":{
       "name": "B",
       "email": ["b@bmail.com"],
       "fields":[
@@ -101,13 +101,13 @@
     "game-signup-1":{
       "status": "played",
       "game-id": "game-id-1",
-      "user-id": "user-id-1",
+      "player-id": "player-id-1",
       "field-id": "field-id-1"
     },
     "game-signup-2":{
       "status": "will play",
       "game-id": "game-id-2",
-      "user-id": "user-id-2",
+      "player-id": "player-id-2",
       "field-id": "field-id-2"
     }
   },
@@ -116,7 +116,7 @@
     "game-review-id-1": {
       "stars": "5",
       "comment": "abc",
-      "user-id": "user-id-1",
+      "player-id": "player-id-1",
       "game-id": "game-id-1"
     }
   },
@@ -126,12 +126,12 @@
       "type": "game",
       "game-id": "game-id-1",
       "start-date": "2021-01-01",
-      "users": ["user-id-1", "user-id-2"]
+      "players": ["player-id-1", "player-id-2"]
     },
     "chat-message-id-2":{
-      "type": "users",
+      "type": "players",
       "start-date": "2021-01-01",
-      "users":["user-id-1", "user-id-2"]
+      "players":["player-id-1", "player-id-2"]
     }
   }
 }
