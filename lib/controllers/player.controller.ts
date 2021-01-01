@@ -1,11 +1,31 @@
 import Player from "../models/player.model";
 import { Request, Response } from "express";
 
+let players:Object = [
+  {id: '1', name:'a', lastgame:new Date('2020-01')},
+  {id: '2', name:'b', lastgame:new Date('2020-01')},
+  {id: '3', name:'c', lastgame:new Date('2020-02')},
+  {id: '4', name:'d', lastgame:new Date('2020-03')},
+  {id: '5', name:'e', lastgame:new Date('2020-03')},
+];
+
 // players who haven't played since specific date
 export const player_last_game = function(req:Request, res:Response) {
-  let date:string = req.params.date;
+  let status:number = 200;
+  let result:string[] = [];
+  let date:Date = new Date(req.params.date);
 
-  res.send(`NOT IMPLEMENTED: Player last game ${req.params.date}`);
+  try{
+    Object.entries(players).forEach(([key, value]) => {
+      if(value.lastgame < date){ result.push(value.id); }
+    });
+    
+    if(result.length === 0){ status = 204; }
+    
+    res.status(status).json(result);
+  }catch(err){
+    res.status(500).send(err);
+  }
 };
 
 // Average review above 5 stars
