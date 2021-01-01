@@ -1,6 +1,8 @@
 import dotenv from "dotenv";
 import express from "express";
 import mongoose, { Schema } from "mongoose";
+import fieldRoute from "./routes/field.route";
+import playerRoute from "./routes/player.route";
 
 dotenv.config();
 
@@ -56,24 +58,9 @@ app.listen(process.env.PORT, () => {
   console.log(`Running at https://${process.env.HOSTNAME}:${process.env.PORT}`);
 });
 
-const findByDate = (date:string, done) => {
-  Player.find({lastGame:date}, function(err, data){
-    if(err) return console.log(err);
-    done(null, data);
-  });
-};
-
-router.get("/findByDate", function(req, res){
-  Player.find({lastGame: "2020-01-01"}, function(err, result) {
-    if (!err) {
-      console.log('players', result);
-      res.send(result);
-    }else{
-      console.log(err);
-      res.send("nops");
-    }
-  });
-});
+// setting routes
+router.use('/field', fieldRoute);
+router.use('/player', playerRoute);
 
 /* PLAYER CREATION */
 const playerSchema:Schema = new Schema({
