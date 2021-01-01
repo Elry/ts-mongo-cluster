@@ -1,16 +1,37 @@
 import mongoose, { Schema, Document } from 'mongoose';
-// import { IUser } from './user.model';
-
 
 export interface IField extends Document {
-  name: string;
-  lastGame: string;
-  // owner: IUser['_id'];
+  name:string,
+  description:string,
+  type:string,
+  directions: {
+    number:number,
+    street:string,
+    district:string,
+    coordinates: {
+      lat:string,
+      long:string
+    }
+  },
+  photosUrl: string[],
+  fieldAvailabilities: string[]
 }
 
 const fieldSchema:Schema = new Schema({
   name: {type:String,required: true},
-  lastGame: {type:String}
+  description:String,
+  type:String,
+  directions:{
+    number:Number,
+    street:String,
+    district:String,
+    coordinates:{
+      lat:String,
+      long:String
+    }
+  },
+  photosUrl:{type:Array},
+  fieldAvailabilities:[{type:Schema.Types.ObjectId}]
 });
 
 export default mongoose.model<IField>('Field', fieldSchema);
