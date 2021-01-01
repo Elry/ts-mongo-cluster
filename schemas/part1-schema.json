@@ -57,7 +57,7 @@
 
   "game": {
     "game-id-1": {
-      "team-size": "11",
+      "team-size":11,
       "field-id": "field-id-1",
       "start-time": 1601010101,
       "players": [
@@ -85,7 +85,8 @@
         "a@gmail.com",
         "a1@gmail.com"
       ],
-      "fields": ["field-id-1"]
+      "fields": ["field-id-1"],
+      "last-game": "2020-01-01"
     },
     "player-id-2":{
       "name": "B",
@@ -93,7 +94,8 @@
       "fields":[
         "field-id-1",
         "field-id-2"
-      ]
+      ],
+      "last-game": "2020-02-01"
     }
   },
 
