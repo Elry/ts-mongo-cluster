@@ -9,7 +9,7 @@ export interface IFieldAvailability extends Document {
 
 const fieldAvailabilitySchema:Schema = new Schema({
   status:Boolean,
-  time:{type:String, required:true},
+  time: {type:String, required:true},
   field: {type:Schema.Types.ObjectId}
 });
 
