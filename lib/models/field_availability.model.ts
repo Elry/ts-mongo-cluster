@@ -13,4 +13,4 @@ const fieldAvailabilitySchema:Schema = new Schema({
   field: {type:Schema.Types.ObjectId}
 });
 
-export default mongoose.model<IFieldAvailability>('Field', fieldAvailabilitySchema);
+export default mongoose.model<IFieldAvailability>('FieldAvailability', fieldAvailabilitySchema);
