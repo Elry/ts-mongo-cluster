@@ -1,7 +1,7 @@
 var assert = require('assert');
 
 describe("players", () => {
-  it("should return lastgame", (done) => {
+  it("should return ids from lastgame", (done) => {
     let result = [];
     let currentDate = new Date('2020-01');
 
