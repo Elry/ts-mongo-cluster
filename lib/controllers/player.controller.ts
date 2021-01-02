@@ -33,5 +33,18 @@ export const player_game_review_bFive = function(req:Request, res:Response) {
   let numGames:string = req.params.numGames;
   let avgRating:string = req.params.avgRating;
 
+// Student.findOne({_id:req.params.id}, function(err, student){
+//        if(!err && student){
+//            Courses.find({student_id:req.params.id},function(error,courses){
+//                 if(!error && courses){
+//                     student.courses=courses;
+//                 }else{
+//                     student.courses=[];
+//                 }
+//                 res.send(student);
+//            });
+//        }
+// });
+
   res.send('NOT IMPLEMENTED: Player rating: ' + req.params.id);
 };
