@@ -1,4 +1,3 @@
-import Field from "../models/field.model";
 import { Request, Response } from "express";
 import fieldAvailabilities from "../models/field_availability.model";
 
