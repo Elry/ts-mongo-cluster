@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 import express from "express";
-import mongoose, { Schema } from "mongoose";
+import mongoose from "mongoose";
 import fieldRoute from "./routes/field.route";
 import playerRoute from "./routes/player.route";
 
@@ -8,7 +8,6 @@ dotenv.config();
 
 const app = express();
 const router = express.Router();
-
 const enableCORS = function (req, res, next) {
   if (!process.env.DISABLE_XORIGIN) {
     /* Test only*/
@@ -36,7 +35,7 @@ connection.once("open", function() {
 });
 
 // home
-app.get('/', (req, res) => res.send('Celebreak challenge'));
+app.get('/', (req, res) => res.json('Celebreak challenge'));
 
 // setting basic cors
 app.use('/api', enableCORS, router);
@@ -67,53 +66,3 @@ app.listen(process.env.PORT, () => {
 // setting routes
 router.use('/field', fieldRoute);
 router.use('/player', playerRoute);
-
-/* PLAYER CREATION */
-const playerSchema:Schema = new Schema({
-  name: {type:String,required: true},
-  lastGame: {type:String}
-});
-
-const Player = mongoose.model("Player", playerSchema);
-
-const createPlayers = (playersArr, done) => {
-  Player.create(playersArr, function(err, data){
-    if(err) return console.log(err);
-    done(null, data);
-  });
-};
-
-const createPlayer = (done) => {
-  let player = new Player({
-    name:"a",
-    lastGame: "2020-01-01"
-  });
-
-  player.save(function(err,data){
-    if(err) return console.log(err);
-    done(null, data);
-  });
-};
-
-router.get("/cPlayer", function (req, res, next) {
-  let t = setTimeout(() => {
-    next({ message: "timeout" });
-  }, 10000);
-  createPlayer(function (err, data) {
-    clearTimeout(t);
-    if (err) {
-      return next(err);
-    }
-    if (!data) {
-      console.log("Missing `done()` argument");
-      return next({ message: "Missing callback argument" });
-    }
-    Player.findById(data._id, function (err, pers) {
-      if (err) {
-        return next(err);
-      }
-      res.json(pers);
-    });
-  });
-});
-/* PLAYER CREATION */
