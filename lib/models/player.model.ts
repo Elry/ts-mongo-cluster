@@ -13,6 +13,6 @@ const playerSchema:Schema = new Schema({
   lastGame: {type:String},
   name: {type:String,required: true},
   fields: {type:Schema.Types.ObjectId}
-});
+},{collection: "players"});
 
 export default mongoose.model<IPlayer>('Player', playerSchema);

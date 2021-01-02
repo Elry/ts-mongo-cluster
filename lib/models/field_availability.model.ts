@@ -4,13 +4,13 @@ import mongoose, { Schema, Document } from 'mongoose';
 export interface IFieldAvailability extends Document {
   time:string,
   status:boolean,
-  field:IField['_id']
+  fieldId:IField['_id']
 }
 
 const fieldAvailabilitySchema:Schema = new Schema({
-  status:Boolean,
-  time: {type:String, required:true},
-  field: {type:Schema.Types.ObjectId}
-});
+  status: {type:Boolean},
+  time: {type:Date, required:true},
+  fieldId: {type:Schema.Types.ObjectId},
+},{collection: "field-availability"});
 
 export default mongoose.model<IFieldAvailability>('FieldAvailability', fieldAvailabilitySchema);

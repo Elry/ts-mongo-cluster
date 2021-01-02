@@ -18,20 +18,20 @@ export interface IField extends Document {
 }
 
 const fieldSchema:Schema = new Schema({
-  name: {type:String,required: true},
-  description:String,
-  type:String,
+  name: {type:String, required: true},
+  description:{type:String},
+  type:{type:String},
   directions:{
-    number:Number,
-    street:String,
-    district:String,
+    number: {type:Number},
+    street:{type:String},
+    district:{type:String},
     coordinates:{
-      lat:String,
-      long:String
+      lat:{type:String},
+      long:{type:String}
     }
   },
   photosUrl:{type:Array},
   fieldAvailabilities:[{type:Schema.Types.ObjectId}]
-});
+},{collection: "field"});
 
 export default mongoose.model<IField>('Field', fieldSchema);
