@@ -14,6 +14,6 @@ const gameReviewSchema:Schema = new Schema({
   stars: {type:String, required:true},
   gameId: {type:Schema.Types.ObjectId},
   playerId: {type:Schema.Types.ObjectId},
-});
+},{collection: "game-review"});
 
 export default mongoose.model<IGameReview>('GameReview', gameReviewSchema);

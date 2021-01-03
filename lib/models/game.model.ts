@@ -17,6 +17,6 @@ const gameSchema:Schema = new Schema({
   fieldId: {type:Schema.Types.ObjectId},
   players: [{type:Schema.Types.ObjectId}],
   availabilityId: {type:Schema.Types.ObjectId},
-});
+},{collection: "game"});
 
 export default mongoose.model<IGame>('Game', gameSchema);
