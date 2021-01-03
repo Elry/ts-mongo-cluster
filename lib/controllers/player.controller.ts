@@ -6,17 +6,11 @@ export const player_last_game = async function(req:Request, res:Response) {
   let status:number = 200;
   let final:IPlayer[] = [];
   let date:Date = new Date(req.params.date);
+  let searchParams:object = {lastGame: {$gte:date}};
 
-  Player.find({})
-    .then(function(result){
-      result.forEach(ele => {
-        if(date >= new Date(ele.lastGame)){
-          final.push(ele); 
-        }
-      });
-
-      if(final.length === 0){ status = 204; }
-      res.status(status).json(final);
+  Player.find(searchParams)
+    .then(function(players){
+      res.status(status).json(players);
     })
     .catch(function(err){
       res.status(500).json(err);
