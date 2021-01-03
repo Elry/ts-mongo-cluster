@@ -10,7 +10,7 @@ export interface IGameReview extends Document {
 }
 
 const gameReviewSchema:Schema = new Schema({
-  comment: String,
+  comment: {type: String},
   stars: {type:String, required:true},
   gameId: {type:Schema.Types.ObjectId},
   playerId: {type:Schema.Types.ObjectId},
