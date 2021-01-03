@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 import express from "express";
 import mongoose from "mongoose";
+import gameRoute from "./routes/game.route";
 import fieldRoute from "./routes/field.route";
 import playerRoute from "./routes/player.route";
 
@@ -64,5 +65,6 @@ app.listen(process.env.PORT, () => {
 });
 
 // setting routes
+router.use('/game', gameRoute);
 router.use('/field', fieldRoute);
 router.use('/player', playerRoute);
