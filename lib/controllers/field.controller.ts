@@ -10,17 +10,14 @@ export const unutilized_field_availability = async function(req:Request, res:Res
   let startDate:string = req.params.startDate;
   let searchParams:object = {"fieldId": fieldId, time:{ $gte: startDate, $lte: endDate }};
 
-  try{
-    await fieldAvailabilities.find(searchParams, function(err, result) {
-      if (err) {
-        status = 500;
-        console.log(err);
-      } else { count++; }
+  fieldAvailabilities.find(searchParams)
+    .then(function(result){
+      result.forEach(ele => { count++; });
+      
+      res.status(status).json(count);
+    })
+    .catch(function(err){
+      console.log(err);
+      res.status(500).send(err);
     });
-    if(!count){ status = 204; }
-
-    res.status(status).json(count);
-  }catch(err){
-    res.status(500).send(err);
-  }
 };
