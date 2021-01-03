@@ -12,8 +12,8 @@ export interface IGame extends Document {
 }
 
 const gameSchema:Schema = new Schema({
-  startTime:Date,
-  teamSize:Number,
+  startTime: {type:Date},
+  teamSize: {type:Number},
   fieldId: {type:Schema.Types.ObjectId},
   players: [{type:Schema.Types.ObjectId}],
   availabilityId: {type:Schema.Types.ObjectId},

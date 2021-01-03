@@ -3,7 +3,7 @@ import { IPlayer } from './player.model';
 import mongoose, { Schema, Document } from 'mongoose';
 
 export interface IGameReview extends Document {
-  stars:string,
+  stars:number,
   comment:string,
   gameId: IGame['_id'],
   playerId: IPlayer['_id']
@@ -11,7 +11,7 @@ export interface IGameReview extends Document {
 
 const gameReviewSchema:Schema = new Schema({
   comment: {type: String},
-  stars: {type:String, required:true},
+  stars: {type:Number, required:true},
   gameId: {type:Schema.Types.ObjectId},
   playerId: {type:Schema.Types.ObjectId},
 },{collection: "game-review"});
