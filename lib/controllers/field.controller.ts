@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import fieldAvailabilities from "../models/field_availability.model";
 
 // unutilized field availability
-export const unutilized_field_availability = async function(req:Request, res:Response) {
+export const unutilized_field_availability = function(req:Request, res:Response):void {
   let count:number = 0;
   let status:number = 200;
   let fieldId:string = req.params.fieldId;
