@@ -10,7 +10,7 @@ export interface IFieldAvailability extends Document {
 const fieldAvailabilitySchema:Schema = new Schema({
   status: {type:Boolean},
   time: {type:Date, required:true},
-  fieldId: {type:Schema.Types.ObjectId},
+  fieldId: {type:Schema.Types.ObjectId, ref:'field'},
 },{collection: "field-availability"});
 
 export default mongoose.model<IFieldAvailability>('FieldAvailability', fieldAvailabilitySchema);

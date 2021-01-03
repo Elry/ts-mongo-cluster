@@ -31,7 +31,7 @@ const fieldSchema:Schema = new Schema({
     }
   },
   photosUrl:{type:Array},
-  fieldAvailabilities:[{type:Schema.Types.ObjectId}]
+  fieldAvailabilities:[{type:Schema.Types.ObjectId, ref:'field-availability'}]
 },{collection: "field"});
 
 export default mongoose.model<IField>('Field', fieldSchema);
