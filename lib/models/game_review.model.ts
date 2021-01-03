@@ -13,7 +13,7 @@ const gameReviewSchema:Schema = new Schema({
   comment: {type: String},
   stars: {type:Number, required:true},
   gameId: {type:Schema.Types.ObjectId, ref:'game'},
-  playerId: {type:Schema.Types.ObjectId, ref:'player'},
+  playerId: {type:mongoose.Types.ObjectId, ref:'player'},
 },{collection: "game-review"});
 
 export default mongoose.model<IGameReview>('GameReview', gameReviewSchema);
