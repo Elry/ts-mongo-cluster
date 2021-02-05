@@ -10,4 +10,4 @@ npm build
 ```
 
 ## nosql
-Using MongoDB atlas with a temporary user to query the celebreak cluster created. The schemas on the cluster are minimal for the challenge only
+Using MongoDB atlas with a temporary user to query the cluster created. The schemas on the cluster are minimal for the challenge only
