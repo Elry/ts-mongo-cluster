@@ -36,7 +36,7 @@ connection.once("open", function() {
 });
 
 // home
-app.get('/', (req, res) => res.json('Celebreak challenge'));
+app.get('/', (req, res) => res.json('TS challenge'));
 
 // setting basic cors
 app.use('/api', enableCORS, router);
