@@ -1,7 +1,7 @@
 {
-  "name": "celebreak",
+  "name": "ts-mongo",
   "version": "0.0.1",
-  "description": "Celebreak challenge",
+  "description": "TS challenge",
   "main": "part2.ts",
   "engines": {
     "node": "12.*"
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Elry/celebreak.git"
+    "url": "git+https://github.com/Elry/ts-mongo-cluster.git"
   },
   "author": "Rafael Garcia",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Elry/celebreak/issues"
+    "url": "https://github.com/Elry/ts-mongo-cluster/issues"
   },
-  "homepage": "https://github.com/Elry/celebreak#readme",
+  "homepage": "https://github.com/Elry/ts-mongo-cluster#readme",
   "devDependencies": {
     "@types/express": "^4.17.9",
     "@types/mocha": "^8.2.0",
