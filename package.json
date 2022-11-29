@@ -4,7 +4,7 @@
   "description": "TS challenge",
   "main": "part2.ts",
   "engines": {
-    "node": "12.*"
+    "node": "18.*"
   },
   "scripts": {
     "build": "tsc",
